@@ -23,12 +23,13 @@
 
 	<dependencies>
 	
-	<!-- Caso queira trabalhar com xml e json ao mesmo tempo,  
+	<!-- Caso queira trabalhar com xml e json ao mesmo tempo,	
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-	-->
+	--> 
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

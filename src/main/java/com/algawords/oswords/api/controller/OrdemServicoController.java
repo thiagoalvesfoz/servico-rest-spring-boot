@@ -46,7 +46,7 @@ public class OrdemServicoController {
 	}
 	
 	@GetMapping
-	public List<OrdemServicoModel> listar(){	
+	public List<OrdemServicoModel> listar(){
 		return toCollectionModel(repositoryOrdemServico.findAll());
 	}
 	
@@ -74,7 +74,7 @@ public class OrdemServicoController {
 	}
 	
 	//Converte para uma lista de representação model de ordem de servico
-	private List<OrdemServicoModel> toCollectionModel(List<OrdemServico> ordensServico){
+	private List<OrdemServicoModel> toCollectionModel(List<OrdemServico> ordensServico) {
 		return ordensServico.stream()
 				.map(os -> toModel(os))
 				.collect(Collectors.toList());

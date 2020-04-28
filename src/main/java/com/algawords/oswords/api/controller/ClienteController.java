@@ -77,6 +77,9 @@ public class ClienteController {
 		if(!clienteRepository.existsById(clienteId))
 			return ResponseEntity.notFound().build();
 		
+		//implementar regra de negócio na camada service para não quebrar o banco
+		//banco de dados. Motivo: Id de usuário vinculado a ordens de servico
+		
 		clienteService.excluir(clienteId);	
 		return ResponseEntity.noContent().build();
 	}

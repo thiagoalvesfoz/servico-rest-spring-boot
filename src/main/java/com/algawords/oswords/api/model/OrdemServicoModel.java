@@ -7,9 +7,11 @@ import java.util.List;
 import com.algawords.oswords.domain.model.enumeration.StatusOrdemServico;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter
+@NoArgsConstructor
 public class OrdemServicoModel {
 	
 	private Long id;

@@ -13,9 +13,11 @@ import com.algawords.oswords.domain.service.ValidationGroup;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Cliente {
 	
