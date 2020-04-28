@@ -9,8 +9,7 @@ import com.algawords.oswords.domain.model.enumeration.StatusOrdemServico;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter @Setter
 public class OrdemServicoModel {
 	
 	private Long id;

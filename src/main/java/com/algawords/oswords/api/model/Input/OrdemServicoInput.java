@@ -8,8 +8,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter @Setter
 public class OrdemServicoInput {
 	
 	@NotNull
@@ -18,5 +17,4 @@ public class OrdemServicoInput {
 	private String descricao;
 	@NotNull
 	private BigDecimal preco;
-	
 }

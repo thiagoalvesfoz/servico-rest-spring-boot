@@ -22,7 +22,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<Object> hadleEntityNotFound(EntityNotFoundException ex, WebRequest request){
-		
 
 		var status = HttpStatus.NOT_FOUND;	
 		var body = new Resposta();

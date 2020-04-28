@@ -47,8 +47,13 @@ public class OrdemServico {
 	
 	public OrdemServico() { }
 
-	public OrdemServico(String descricao, BigDecimal preco, OffsetDateTime dataAbertura, OffsetDateTime dataFinalizacao,
-			Cliente cliente, StatusOrdemServico status) {
+	public OrdemServico(String descricao, 
+						BigDecimal preco, 
+						OffsetDateTime dataAbertura, 
+						OffsetDateTime dataFinalizacao,
+						Cliente cliente, 
+						StatusOrdemServico status) {
+		
 		this.descricao = descricao;
 		this.preco = preco;
 		this.dataAbertura = dataAbertura;
@@ -69,7 +74,8 @@ public class OrdemServico {
 		
 		if(naoPodeSerFinalizada())
 			throw new DomainException("A ordem de servico não pode ser finalizada");		
+		
 		setStatus(StatusOrdemServico.FINALIZADA);
-		setDataFinalizacao(OffsetDateTime.now());	
+		setDataFinalizacao(OffsetDateTime.now());
 	}
 }

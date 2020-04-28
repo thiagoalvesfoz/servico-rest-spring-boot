@@ -29,9 +29,7 @@ public class OrdemServicoService {
 	
 	public OrdemServico criar(OrdemServico os) {
 		
-		//Realiza a busca do cliente no banco, se não encontrar lança uma exceção de negócio
-		Cliente cliente = clienteRepository.findById(os.getCliente().getId())
-				.orElseThrow(() -> new DomainException("Cliente não encontrado"));
+		Cliente cliente = buscarCliente(os.getCliente().getId());
 		
 		os.setCliente(cliente);
 		os.setStatus(StatusOrdemServico.ABERTA);
@@ -40,7 +38,7 @@ public class OrdemServicoService {
 		return bd.save(os);
 	}
 	
-	public void finalizar(Long ordemServicoId) {
+	public void finalizarOrdemServico(Long ordemServicoId) {
 		OrdemServico os = buscarOrdemServico(ordemServicoId);
 		os.finalizar();
 		bd.save(os);
@@ -61,5 +59,10 @@ public class OrdemServicoService {
 	public OrdemServico buscarOrdemServico(Long ordemServicoId) {
 		return bd.findById(ordemServicoId)
 				.orElseThrow( () -> new EntityNotFoundException("Ordem de Servico não encontrado"));
+	}
+	
+	private Cliente buscarCliente(Long clienteId) {
+		return clienteRepository.findById(clienteId)
+				.orElseThrow(() -> new DomainException("Cliente não encontrado"));
 	}
 }
