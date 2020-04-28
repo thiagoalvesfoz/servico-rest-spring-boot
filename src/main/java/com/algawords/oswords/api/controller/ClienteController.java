@@ -38,7 +38,7 @@ public class ClienteController {
 		return clienteRepository.findAll();
 	}
 	
-	//Buscando clientes
+	//Busca cliente por id
 	@GetMapping("/{clienteId}")
 	public ResponseEntity<Cliente> buscar(@PathVariable Long clienteId) {
 		
@@ -60,11 +60,10 @@ public class ClienteController {
 	
 	//Atualizar Cliente
 	@PutMapping("/{clienteId}")
-	public ResponseEntity<Cliente> atualizar(@Valid @PathVariable Long clienteId, @RequestBody Cliente cliente) {
+	public ResponseEntity<Cliente> atualizar(@PathVariable Long clienteId, @Valid @RequestBody Cliente cliente) {
 		
 		if(!clienteRepository.existsById(clienteId))
 			return ResponseEntity.notFound().build();
-
 		
 		cliente.setId(clienteId);
 		cliente = clienteService.salvar(cliente );
@@ -79,13 +78,7 @@ public class ClienteController {
 			return ResponseEntity.notFound().build();
 		
 		clienteService.excluir(clienteId);	
-		return ResponseEntity.noContent().build(); //poderia ser o código 200, porém o código 204 é melhor
+		return ResponseEntity.noContent().build();
 	}
-	
-	
-	//Para validar os dados que entram com post e put, irá 
-	// utilizar especificação Jakarta Bean Validation
-	//Juntamente com a implementação Hibernate Validation
-	//Quem já vem nativo no Spring starter
 
 }

@@ -51,7 +51,7 @@ public class OrdemServicoService {
 		OrdemServico os = buscarOrdemServico(ordemServicoId);
 		
 		Comentario comentario = new Comentario();
-		comentario.setOs(os);
+		comentario.setOrdemServico(os);;
 		comentario.setDescricao(comentarioInput);
 		comentario.setDataEnvio(OffsetDateTime.now());
 		

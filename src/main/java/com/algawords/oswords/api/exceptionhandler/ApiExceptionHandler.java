@@ -71,5 +71,4 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		body.setCampos(campos);
 		return super.handleExceptionInternal(ex, body, headers, status, request);
 	}
-
 }

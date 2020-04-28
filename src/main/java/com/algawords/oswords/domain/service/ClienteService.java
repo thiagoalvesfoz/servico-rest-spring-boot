@@ -7,24 +7,24 @@ import com.algawords.oswords.domain.exception.DomainException;
 import com.algawords.oswords.domain.model.Cliente;
 import com.algawords.oswords.domain.repository.ClienteRepository;
 
-@Service //componente do spring
+@Service
 public class ClienteService {
 	
 	@Autowired
-	private ClienteRepository bd;
+	private ClienteRepository clienteRepository;
 	
 	public Cliente salvar(Cliente cliente) {
 		
-		Cliente clienteExistente = bd.findByEmail(cliente.getEmail());
+		Cliente clienteExistente = clienteRepository.findByEmail(cliente.getEmail());
 		
 		if(clienteExistente != null && !clienteExistente.equals(cliente))
 			throw new DomainException("Já existe um cliente cadastrado com esse email.");
 		
-		return bd.save(cliente);
+		return clienteRepository.save(cliente);
 	}
 	
 	public void excluir(Long clienteId) {
-		bd.deleteById(clienteId);
+		clienteRepository.deleteById(clienteId);
 	}
 
 }
