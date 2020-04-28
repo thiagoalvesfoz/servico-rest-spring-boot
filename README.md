@@ -1,8 +1,8 @@
-# Project Title
+# Exemplo de um Serviço REST utilizando o Spring Boot
 
-One Paragraph of project description goes here
+Essa aplicação foi desenvolvida utilizando os conceitos da semana spring rest algaworks (20/04/2020 à 26/04/2020)
 
-## Começando
+## Passos iniciais
 
 Recomendo utilizar alguma IDE [Spring Tools](https://spring.io/tools).
 
